@@ -6,60 +6,64 @@ import (
 	"github.com/yegres025/app/events"
 )
 
-var EventsMap = make(map[string]events.Event)
+var calendarEvents = make(map[string]events.Event)
 
-func AddEvent(key string, e events.Event) {
-	validate := events.IsValidateTitle(e.Title)
+func AddEvent(title, date, priority string) (events.Event, error) {
+	e, err := events.NewEvent(title, date, priority)
 
-	if !validate {
-		fmt.Println("Некорректное имя задачи -", e.Title)
-		return
+	if err != nil {
+		return events.Event{}, err
 	}
 
-	EventsMap[key] = e
-	fmt.Println("Событие добавлено:", e.Title)
+	calendarEvents[e.ID] = e
+	return e, err
 }
 
-func ShowEvents(eventsMap map[string]events.Event) {
-	for _, v := range eventsMap {
-		fmt.Println(v.Title, "-", v.StartAt.Format("02.01.2006 15:04"))
+func ShowEvents() {
+	for _, v := range calendarEvents {
+		fmt.Println(v.Title, "-", v.StartAt.Format("02.01.2006 15:04"), "(", v.Priority, ")")
 	}
 }
 
-func RemoveEvent(eventsMap map[string]events.Event, key string) {
-	_, ok := eventsMap[key]
+func RemoveEvent(key string) {
+	_, ok := calendarEvents[key]
 
 	if ok {
-		fmt.Println("Задача", key, "удалена")
-		delete(eventsMap, key)
+		fmt.Println("Задача", calendarEvents[key].Title, "удалена")
+		delete(calendarEvents, key)
 		return
 	} else {
 		fmt.Println("Нет такой задачи")
 	}
 }
 
-func ChangeEvent(eventsMap map[string]events.Event, key string, newTitle string, newDate string) {
-	event, ok := eventsMap[key]
-	validate := events.IsValidateTitle(newTitle)
-	t, dateErr := dateparse.ParseAny(newDate)
-
+func ChangeEvent(key, newTitle, newDate, newPriority string) {
+	event, ok := calendarEvents[key]
 	if !ok {
 		fmt.Println("Задача", key, "не найдена")
 		return
 	}
 
-	if !validate {
-		fmt.Println("Некорректное имя задача - ", newTitle)
-		return
-	}
-
+	t, dateErr := dateparse.ParseAny(newDate)
 	if dateErr != nil {
 		fmt.Println("Некорректный формат даты")
 		return
 	}
 
+	validateTitle := events.IsValidateTitle(newTitle)
+	if !validateTitle {
+		fmt.Println("Некорректное имя задачи -", newTitle)
+		return
+	}
+
+	validatePriority := events.IsValidateTitle(newPriority)
+	if !validatePriority {
+		fmt.Println("Некорректное значение приоритета -", newPriority)
+	}
+
 	event.Title = newTitle
 	event.StartAt = t
-	eventsMap[key] = event
+	event.Priority = newPriority
+	calendarEvents[key] = event
 	fmt.Println("Задача обновлена:", newTitle, "-", newDate)
 }
