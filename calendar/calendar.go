@@ -4,8 +4,8 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"github.com/yegres025/app/events"
-	"github.com/yegres025/app/storage"
+	"github.com/yegres025/babayka/events"
+	"github.com/yegres025/babayka/storage"
 )
 
 type Calendar struct {

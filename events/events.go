@@ -5,7 +5,7 @@ import (
 	"fmt"
 	"github.com/araddon/dateparse"
 	"github.com/google/uuid"
-	"github.com/yegres025/app/reminder"
+	"github.com/yegres025/babayka/reminder"
 	"regexp"
 	"time"
 )

@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/yegres025/app/calendar"
-	"github.com/yegres025/app/cmd"
-	"github.com/yegres025/app/storage"
+	"github.com/yegres025/babayka/calendar"
+	"github.com/yegres025/babayka/cmd"
+	"github.com/yegres025/babayka/storage"
 )
 
 func main() {
