@@ -1,9 +1,9 @@
-package json_storage
+package storage
 
 type Store interface {
 	Save(data []byte) error
 	Load() ([]byte, error)
-	GetFileName(string)
+	GetFileName() string
 }
 
 type Storage struct {

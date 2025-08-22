@@ -1,4 +1,4 @@
-package json_storage
+package storage
 
 import (
 	"archive/zip"
@@ -31,7 +31,7 @@ func (z *ZipStorage) Save(data []byte) error {
 	zw := zip.NewWriter(f)
 	defer zw.Close()
 
-	w, err := os.Create("data")
+	w, err := zw.Create("data")
 	_, err = w.Write(data)
 	return err
 }

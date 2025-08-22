@@ -1,0 +1,24 @@
+INFO: 2025/08/21 19:55:45 cmd.go:69: show event from ShowEvents: Meme - low
+INFO: 2025/08/21 19:55:45 cmd.go:69: show event from ShowEvents: Teeeeest - low
+INFO: 2025/08/21 19:55:45 cmd.go:69: show event from ShowEvents: AHAHAHAHA - medium
+SYSTEM: 2025/08/21 19:55:45 cmd.go:71: the function is called: ShowEvents
+SYSTEM: 2025/08/21 19:56:36 cmd.go:88: the function is called: EditEvent
+INFO: 2025/08/21 19:56:36 cmd.go:89: update event Updated - Meme - Meme - 12/12/2027- medium
+INFO: 2025/08/21 20:00:54 cmd.go:69: show event from ShowEvents: Teeeeest - low
+INFO: 2025/08/21 20:00:54 cmd.go:69: show event from ShowEvents: AHAHAHAHA - medium
+INFO: 2025/08/21 20:00:54 cmd.go:69: show event from ShowEvents: Meme - low
+SYSTEM: 2025/08/21 20:00:54 cmd.go:71: the function is called: ShowEvents
+SYSTEM: 2025/08/21 20:01:21 cmd.go:89: the function is called: EditEvent
+INFO: 2025/08/21 20:01:21 cmd.go:90: update event Updated - Meme - Keke - 12/12/2027- low
+INFO: 2025/08/22 10:48:48 cmd.go:69: show event from ShowEvents: Teeeeest - low
+INFO: 2025/08/22 10:48:48 cmd.go:69: show event from ShowEvents: AHAHAHAHA - medium
+INFO: 2025/08/22 10:48:48 cmd.go:69: show event from ShowEvents: Keke - low
+SYSTEM: 2025/08/22 10:48:48 cmd.go:71: the function is called: ShowEvents
+INFO: 2025/08/22 10:48:50 cmd.go:69: show event from ShowEvents: AHAHAHAHA - medium
+INFO: 2025/08/22 10:48:50 cmd.go:69: show event from ShowEvents: Keke - low
+INFO: 2025/08/22 10:48:50 cmd.go:69: show event from ShowEvents: Teeeeest - low
+SYSTEM: 2025/08/22 10:48:50 cmd.go:71: the function is called: ShowEvents
+INFO: 2025/08/22 10:48:51 cmd.go:69: show event from ShowEvents: Teeeeest - low
+INFO: 2025/08/22 10:48:51 cmd.go:69: show event from ShowEvents: AHAHAHAHA - medium
+INFO: 2025/08/22 10:48:51 cmd.go:69: show event from ShowEvents: Keke - low
+SYSTEM: 2025/08/22 10:48:51 cmd.go:71: the function is called: ShowEvents
